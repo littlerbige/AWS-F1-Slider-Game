@@ -1,0 +1,511 @@
+/******************
+* Table of Contents
+*
+* # Resets #
+*
+* # Colors #
+*
+* # Typography Styling #
+*
+* # Elements #
+*   ## Buttons
+*   ## Inputs
+*
+* # General Styling #
+*
+* # Content #
+*   ## Dashboard Styling
+*       ### Tile Styling
+*       ### Tile Media Queries 
+*       ### Tile Input Styling
+*   ## Results and Progress Bar Styling
+*       ### Results Wrapper
+*       ### Button Container Styling
+*       ### Lap Time Styling
+*       ### Price Progress Bar Styling
+*       ### Results Section Media Queries
+*
+******************/
+
+/**
+* Resets
+**/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+h1,
+h2,
+h3 {
+    text-wrap: balance;
+}
+
+/**
+* Colors
+**/
+
+:root {
+    --dark: #0E0E11;
+    --blue: #1A2B3C;
+    --dark-blue: #0C1829;
+    --light: #FFFFFF;
+    --grey: #37373A;
+    --accent: #F6AF00;
+    --accent-2:  #46B929;
+}
+
+/**
+* Typography Styling
+**/
+
+:root {
+    --huge-font-size: clamp(1.802rem, 0.5217rem + 4.097vw, 4.209rem);
+    --xxlarge-font-size: clamp(1.602rem, 0.7749rem + 2.6468vw, 3.157rem);
+    --xlarge-font-size: clamp(1.424rem, 0.923rem + 1.6032vw, 2.3659rem);
+    --large-font-size: clamp(1.266rem, 0.9942rem + 0.8698vw, 1.777rem);
+    --medium-font-size: clamp(1.125rem, 1.0144rem + 0.354vw, 1.333rem);
+    --normal-font-size: clamp(0.889rem, 0.83rem + 0.1889vw, 1rem);
+    --small-font-size: clamp(0.702rem, 0.6765rem + 0.0817vw, 0.75rem);
+    --xsmall-font-size: 0.563rem;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;700&display=swap');
+
+h1 {
+    font-size: var(--huge-font-size);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: var(--xxlarge-font-size);
+    font-weight: 700;
+}
+
+h3 {
+    font-size: var(--large-font-size);
+    font-weight: 700;
+}
+
+h4 {
+    font-size: var(--large-font-size);
+    font-weight: 700;
+}
+
+h5 {
+    font-size: var(--medium-font-size);
+    font-weight: 700;
+}
+
+h6 {
+    font-size: var(--normal-font-size);
+    font-weight: 700;
+}
+
+p {
+    font-size: var(--normal-font-size);
+    font-weight: 300;
+}
+
+/**
+* Elements
+**/
+
+/** Button Styling **/
+
+button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--accent);
+    font-size: var(--normal-font-size);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--dark-blue);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+}
+
+/** Range Input Styling **/
+
+/** Range reset **/
+input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    background: transparent; 
+    border-color: transparent;
+    color: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+/** Thumb Styling **/
+/** Webkit / Chrome / Edge thumb centering fix **/
+input[type=range]::-webkit-slider-thumb {
+    height: 1rem;
+    width: 1rem;
+    margin-top: calc((0.3rem / 2) - (1rem / 2));
+    border-radius: 100%;
+    background-color: var(--accent);
+}
+/** Firefox grey thumb border fix **/
+input[type=range]::-moz-range-thumb {
+    height: 1rem;
+    width: 1rem;
+    border: none;
+    border-radius: 100%;
+    background-color: var(--accent);
+}
+
+input[type=range]::-ms-thumb {
+    height: 1rem;
+    width: 1rem;
+    border-radius: 100%;
+    background-color: var(--accent);
+}
+/** Slider Styling **/
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 0.3rem;
+    border-radius: 20px;
+    background-color: var(--accent);
+}
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 0.3rem;
+    border-radius: 20px;
+    background-color: var(--accent);
+}
+
+/**
+* General
+**/
+
+body {
+    color: var(--light);
+    background-color: var(--dark-blue);
+    font-family: 'Inconsolata', monospace;
+}
+
+#site-wrapper {
+    max-width: 2000px;
+    margin: 0 auto;
+}
+
+/**
+* Content
+**/
+
+/**
+* Dashboard Styling
+**/
+.dashboard-wrapper {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 2%;
+    margin: 0 auto;
+    max-width: 1600px;
+}
+
+/** Tile Styling **/
+.tile-grid {
+    padding-bottom: 2%;
+    display: grid;
+    gap: 1rem;
+    height: 100%;
+}
+
+.tile {
+    padding: 5px;
+    border-radius: 10px;
+    background-color: var(--blue);
+}
+
+.tile-title {
+    padding: 0.8em 0;
+    margin: 0;
+    text-align: center;
+    font-size: var(--large-font-size);
+    color: var(--light);
+    background-color: var(--dark-blue);
+    border-radius: 10px;
+}
+
+/** Game Description Tile **/
+#game-description h1 {
+    font-size: var(--xxlarge-font-size);
+}
+
+#game-description h2 {
+    font-size: var(--large-font-size);
+}
+
+#game-description p {
+    font-size: var(--medium-font-size);
+}
+
+/** Tile Media Queries **/
+/* CSS in here for mobile only */
+@media (max-width: 768px) {
+    .tile-grid {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: auto;
+    }
+    .tile {
+        grid-column: span 5;
+    }
+}
+/* CSS in here for tablet only */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .tile-grid {
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+    }
+    #game-description {
+        grid-column: span 10;
+        grid-row: span 2;
+        padding: 1rem;
+    }
+    
+    #aerodynamics-tile {
+        grid-column: span 5;
+        grid-row: span 3;
+    }
+    
+    #vehicle-dynamics-tile {
+        grid-column: 1 / span 5;
+        grid-row: span 2;
+    }
+    
+    #powertrain-tile {
+        grid-column: 6 / span 5;
+        grid-row: 3 / span 3;
+    }
+    
+    #weight-management-tile {
+        grid-column: 6 / span 5;
+        grid-row: 6 / span 2;
+    }
+    #electronics-tile {
+        grid-column: 1 / span 10;
+        grid-row: span 1;
+    }
+}
+/* CSS in here for desktop only */
+@media (min-width: 1025px) {
+	.tile-grid {
+        grid-template-columns: repeat(15, 1fr);
+        grid-template-rows: repeat(9, 1fr);
+    }
+    #game-description {
+        grid-column: span 5;
+        grid-row: span 9;
+        padding: 1rem;
+    }
+    
+    #aerodynamics-tile {
+        grid-column: 6 / span 5;
+        grid-row: span 5;
+    }
+    
+    #vehicle-dynamics-tile {
+        grid-column: 6 / span 5;
+        grid-row: span 4;
+    }
+    
+    #powertrain-tile {
+        grid-column: 11 / span 5;
+        grid-row: 1 / span 4;
+    }
+    
+    #weight-management-tile {
+        grid-column: 11 / span 5;
+        grid-row: 5 / span 3;
+    }
+    #electronics-tile {
+        grid-column: 11 / span 5;
+        grid-row: 8 / span 2;
+    }
+
+    #game-description h1 {
+        word-spacing: 100vw;
+    }
+}
+
+/** Tile Input Styling **/
+.input-wrapper {
+    padding: 1em;
+    
+}
+.input-container {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+}
+.input-inner-wrapper {
+    width: 100%;
+    margin: 0 auto 3rem;
+    position: relative;
+}
+
+.rev-slider {
+    width: 100%;
+}
+
+.bubble {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 12px;
+    border-radius: 4px;
+    background: var(--accent);
+    color: white;
+  }
+  .bubble::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    width: 2px;
+    height: 2px;
+    background: var(--accent);
+  }
+
+/**
+* Results and Progress Bar Styling
+**/
+
+/* Results Wrapper */
+.results-wrapper {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    height: 210px;
+    padding: 1rem;
+    display: flex;
+    flex-flow: row wrap-reverse;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid var(--dark);
+    background-color: var(--blue);
+}
+
+/* Button Container Styling */
+.button-container {
+    flex: 1 1 13%;
+    height: 80%;
+}
+.button-container button {
+    width: 100%;
+    height: 100%;
+}
+
+/** Lap Time Styling **/
+#lap-time-tile {
+    flex: 2 1 13%;
+    height: 80%;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    color: var(--light);
+    background-color: var(--accent-2);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#lap-time-tile h2 {
+    font-size: var(--medium-font-size);
+    padding: 0;
+    margin-bottom: 0.25em;
+}
+
+#lap-time-tile p {
+    font-size: var(--large-font-size);
+    font-weight: 700;
+    margin: 0;
+}
+
+/** Price Progress Bar Styling **/
+#price-progress-wrapper {
+    flex: 1 1 69%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#remaining-budget {
+    font-weight: 700;
+    text-align: center;
+    font-size: var(--xxlarge-font-size);
+    color: var(--accent);
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 20px;
+    border-radius: 20px;
+    background-color: var(--dark-blue);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: var(--accent);
+}
+
+/** Results Section Media Queries **/
+@media (max-width: 1085px ) {
+    .results-wrapper {
+        height: 300px;
+    }
+    #lap-time-tile {
+        height: 45%;
+    }
+    .button-container {
+        flex: 1 1 13%;
+        height: 45%;
+    }
+    #price-progress-wrapper {
+        height: 45%;
+    }
+}
