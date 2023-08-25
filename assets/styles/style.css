@@ -85,7 +85,46 @@ h3 {
     --xsmall-font-size: 0.563rem;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;700&display=swap');
+@font-face {
+    font-family: "Amazon Ember Bold";
+    src: url(../fonts/AmazonEmber_Bd.woff) format("Web Open Font Format"),
+    url(../fonts/AmazonEmber_Bd.ttf) format("truetype"),
+    url(../fonts/AmazonEmber_Bd.otf) format("opentype");
+}
+@font-face {
+    font-family: "Amazon Ember Display Bold";
+    src: url(../fonts/AmazonEmberDisplay_Bd.woff) format("Web Open Font Format"),
+    url(../fonts/AmazonEmberDisplay_Bd.ttf) format("truetype"),
+    url(../fonts/AmazonEmberDisplay_Bd.otf) format("opentype");
+}
+
+@font-face {
+    font-family: "Amazon Ember Display Bold Italic";
+    src: url(../fonts/AmazonEmberDisplay_BdIt.woff) format("Web Open Font Format"),
+    url(../fonts/AmazonEmberDisplay_BdIt.ttf) format("truetype"),
+    url(../fonts/AmazonEmberDisplay_BdIt.otf) format("opentype");
+}
+
+@font-face {
+    font-family: "Amazon Ember Display Regular";
+    src: url(../fonts/AmazonEmberDisplay_Rg.woff) format("Web Open Font Format"),
+    url(../fonts/AmazonEmberDisplay_Rg.ttf) format("truetype"),
+    url(../fonts/AmazonEmberDisplay_Rg.otf) format("opentype");
+}
+
+@font-face {
+    font-family: "Amazon Ember Display Regular Italic";
+    src: url(../fonts/AmazonEmberDisplay_RgIt.woff) format("Web Open Font Format"),
+    url(../fonts/AmazonEmberDisplay_RgIt.ttf) format("truetype"),
+    url(../fonts/AmazonEmberDisplay_RgIt.otf) format("opentype");
+}
+
+@font-face {
+    font-family: "Amazon Ember Mono Bold";
+    src: url(../fonts/AmazonEmberMono_Bd.woff) format("Web Open Font Format"),
+    url(../fonts/AmazonEmberMono_Bd.ttf) format("truetype"),
+    url(../fonts/AmazonEmberMono_Bd.otf) format("opentype");
+}
 
 h1 {
     font-size: var(--huge-font-size);
@@ -234,7 +273,7 @@ input[type=range]:disabled::-moz-range-track {
 body {
     color: var(--light);
     background-color: var(--dark-blue);
-    font-family: 'Inconsolata', monospace;
+    font-family: 'Amazon Ember Display Regular'
 }
 
 #site-wrapper {
