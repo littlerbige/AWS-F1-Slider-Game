@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AWS F1 Slider Game</title>
     <link rel="stylesheet" href="assets/styles/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <!-- <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script> -->
 </head>
 <body>
     <div id="site-wrapper">
@@ -26,41 +23,46 @@
                         <div class="input-container">
                             <label for="drag-reduction-slider">Drag Reduction</label>
                             <div class="input-inner-wrapper">
-                                <input type="range" name="drag-reduction-slider" id="drag-reduction-slider" class="rev-slider" min="0" max="150000000" step="500000" value="0">
-                                <output class="bubble">0</output>
+                                <input type="range" name="drag-reduction-slider" id="drag-reduction-slider" class="rev-slider" min="0" max="100" step="1" value="0">
+                                <output class="bubble" data-number-value="0" data-lap-time-reduction="0">0</output>
                             </div>
+                            <output class="lap-time-reduction">+0.00</output>
                             
                         </div>
                         <div class="input-container">
                             <label for="airflow-optimization-slider">Airflow Optimization</label>
                             <div class="input-inner-wrapper">
-                                <input type="range" name="airflow-optimization-slider" id="airflow-optimization-slider" class="rev-slider" min="0" max="150000000" step="500000" value="0">
-                                <output class="bubble">0</output>
+                                <input type="range" name="airflow-optimization-slider" id="airflow-optimization-slider" class="rev-slider" min="0" max="100" step="1" value="0">
+                                <output class="bubble" data-number-value="0" data-lap-time-reduction="0">0</output>
                             </div>
+                            <output class="lap-time-reduction">+0.00</output>
                             
                         </div>
                         <div class="input-container">
                             <label for="front-downforce-slider">Front Downforce</label>
                             <div class="input-inner-wrapper">
-                                <input type="range" name="front-downforce-slider" id="front-downforce-slider" class="rev-slider" min="0" max="150000000" step="500000" value="0">
-                                <output class="bubble">0</output>
+                                <input type="range" name="front-downforce-slider" id="front-downforce-slider" class="rev-slider" min="0" max="100" step="1" value="0">
+                                <output class="bubble" data-number-value="0" data-lap-time-reduction="0">0</output>
                             </div>
+                            <output class="lap-time-reduction">+0.00</output>
                             
                         </div>
                         <div class="input-container">
                             <label for="rear-downforce-slider">Rear Downforce</label>
                             <div class="input-inner-wrapper">
-                                <input type="range" name="rear-downforce-slider" id="rear-downforce-slider" class="rev-slider" min="0" max="150000000" step="500000" value="0">
-                                <output class="bubble">0</output>
+                                <input type="range" name="rear-downforce-slider" id="rear-downforce-slider" class="rev-slider" min="0" max="100" step="1" value="0">
+                                <output class="bubble" data-number-value="0" data-lap-time-reduction="0">0</output>
                             </div>
+                            <output class="lap-time-reduction">+0.00</output>
                             
                         </div>
                         <div class="input-container">
                             <label for="floor-slider">Floor</label>
                             <div class="input-inner-wrapper">
-                                <input type="range" name="floor-slider" id="floor-slider" class="rev-slider" min="0" max="150000000" step="500000" value="0">
-                                <output class="bubble">0</output>
+                                <input type="range" name="floor-slider" id="floor-slider" class="rev-slider" min="0" max="100" step="1" value="0">
+                                <output class="bubble" data-number-value="0" data-lap-time-reduction="0">0</output>
                             </div>
+                            <output class="lap-time-reduction">+0.00</output>
                             
                         </div>
                     </div>
@@ -71,23 +73,26 @@
                         <div class="input-container">
                             <label for="suspension-slider">Suspension</label>
                             <div class="input-inner-wrapper">
-                                <input type="range" name="suspension-slider" id="suspension-slider" class="rev-slider" min="0" max="150000000" step="500000" value="0">
-                                <output class="bubble">0</output>
+                                <input type="range" name="suspension-slider" id="suspension-slider" class="rev-slider" min="0" max="100" step="1" value="0">
+                                <output class="bubble" data-number-value="0" data-lap-time-reduction="0">0</output>
                             </div>
+                            <output class="lap-time-reduction">+0.00</output>
                         </div>
                         <div class="input-container">
                             <label for="suspension-slider2">Suspension 2</label>
                             <div class="input-inner-wrapper">
-                                <input type="range" name="suspension-slider2" id="suspension-slider2" class="rev-slider" min="0" max="150000000" step="500000" value="0">
-                                <output class="bubble">0</output>
+                                <input type="range" name="suspension-slider2" id="suspension-slider2" class="rev-slider" min="0" max="100" step="1" value="0">
+                                <output class="bubble" data-number-value="0" data-lap-time-reduction="0">0</output>
                             </div>
+                            <output class="lap-time-reduction">+0.00</output>
                         </div>
                         <div class="input-container">
                             <label for="suspension-slider3">Suspension 3</label>
                             <div class="input-inner-wrapper">
-                                <input type="range" name="suspension-slider3" id="suspension-slider3" class="rev-slider" min="0" max="150000000" step="500000" value="0">
-                                <output class="bubble">0</output>
+                                <input type="range" name="suspension-slider3" id="suspension-slider3" class="rev-slider" min="0" max="100" step="1" value="0">
+                                <output class="bubble" data-number-value="0" data-lap-time-reduction="0">0</output>
                             </div>
+                            <output class="lap-time-reduction">+0.00</output>
                         </div>
                     </div>
                 </div>
@@ -98,30 +103,34 @@
                             <label for="engine-reliability-slider">Engine Reliability</label>
                             <div class="input-inner-wrapper">
                                 <input type="range" name="engine-reliability-slider" id="engine-reliability-slider" class="rev-slider" min="0" max="100" step="1" value="0">
-                                <output class="bubble">0</output>
+                                <output class="bubble" data-number-value="0" data-lap-time-reduction="0">0</output>
                             </div>
+                            <output class="lap-time-reduction">+0.00</output>
                         </div>
                         <div class="input-container">
                             <label for="turbo-reliability-slider">Turbo Reliability</label>
                             <div class="input-inner-wrapper">
-                                <input type="range" name="turbo-reliability-slider" id="turbo-reliability-slider" class="rev-slider" min="0" max="150000000" step="500000" value="0">
-                                <output class="bubble">0</output>
+                                <input type="range" name="turbo-reliability-slider" id="turbo-reliability-slider" class="rev-slider" min="0" max="100" step="1" value="0">
+                                <output class="bubble" data-number-value="0" data-lap-time-reduction="0">0</output>
                             </div>
+                            <output class="lap-time-reduction">+0.00</output>
                         </div>
                         <div class="input-container">
                             <label for="energy-recovery-slider">Energy Recovery</label>
                             <div class="input-inner-wrapper">
-                                <input type="range" name="energy-recovery-slider" id="energy-recovery-slider" class="rev-slider" min="0" max="150000000" step="500000" value="0">
-                                <output class="bubble">0</output>
+                                <input type="range" name="energy-recovery-slider" id="energy-recovery-slider" class="rev-slider" min="0" max="100" step="1" value="0">
+                                <output class="bubble" data-number-value="0" data-lap-time-reduction="0">0</output>
                             </div>
+                            <output class="lap-time-reduction">+0.00</output>
                             
                         </div>
                         <div class="input-container">
                             <label for="gearbox-slider">Gearbox</label>
                             <div class="input-inner-wrapper">
-                                <input type="range" name="gearbox-slider" id="gearbox-slider" class="rev-slider" min="0" max="150000000" step="500000" value="0">
-                                <output class="bubble">0</output>
+                                <input type="range" name="gearbox-slider" id="gearbox-slider" class="rev-slider" min="0" max="100" step="1" value="0">
+                                <output class="bubble" data-number-value="0" data-lap-time-reduction="0">0</output>
                             </div>
+                            <output class="lap-time-reduction">+0.00</output>
                             
                         </div>
                     </div>
@@ -132,16 +141,18 @@
                         <div class="input-container">
                             <label for="weight-redistribution-slider">Weight Redistribution</label>
                             <div class="input-inner-wrapper">
-                                <input type="range" name="weight-redistribution-slider" id="weight-redistribution-slider" class="rev-slider" min="0" max="150000000" step="500000" value="0">
-                                <output class="bubble">0</output>
+                                <input type="range" name="weight-redistribution-slider" id="weight-redistribution-slider" class="rev-slider" min="0" max="100" step="1" value="0">
+                                <output class="bubble" data-number-value="0" data-lap-time-reduction="0">0</output>
                             </div>
+                            <output class="lap-time-reduction">+0.00</output>
                         </div>
                         <div class="input-container">
                             <label for="weight-reduction-slider">Weight Reduction</label>
                             <div class="input-inner-wrapper">
-                                <input type="range" name="weight-reduction-slider" id="weight-reduction-slider" class="rev-slider" min="0" max="150000000" step="500000" value="0">
-                                <output class="bubble">0</output>
+                                <input type="range" name="weight-reduction-slider" id="weight-reduction-slider" class="rev-slider" min="0" max="100" step="1" value="0">
+                                <output class="bubble" data-number-value="0" data-lap-time-reduction="0">0</output>
                             </div>
+                            <output class="lap-time-reduction">+0.00</output>
                         </div>
                     </div>
                 </div>
@@ -151,24 +162,25 @@
                         <div class="input-container">
                             <label for="software-upgrade-slider">Software Upgrade</label>
                             <div class="input-inner-wrapper">
-                                <input type="range" name="software-upgrade-slider" id="software-upgrade-slider" class="rev-slider" min="0" max="150000000" step="500000" value="0">
-                                <output class="bubble">0</output>
-                            </div>                           
+                                <input type="range" name="software-upgrade-slider" id="software-upgrade-slider" class="rev-slider" min="0" max="100" step="1" value="0">
+                                <output class="bubble" data-number-value="0" data-lap-time-reduction="0">0</output>
+                            </div>
+                            <output class="lap-time-reduction">+0.00</output>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="results-wrapper">
                 <div class="button-container">
-                    <button>Run Simulation</button>
+                    <button id="run-simulation-btn">Run Simulation</button>
                 </div>
                 <div id="lap-time-tile">
                     <h2>Total Lap Time Reduction:</h2>
-                    <p><time>1:21.046</time></p>
+                    <p><time id="total-reduction">0.00s</time></p>
                 </div>
                 <div id="price-progress-wrapper">
                     <div class="remaining-budget-container">
-                        <p id="remaining-budget">$150,000,000</p>
+                        <p id="remaining-budget">$7,500,000</p>
                     </div>
                     <div class="progress-bar-container">
                         <div class="progress-bar"></div>
@@ -179,7 +191,6 @@
         </main>
         <footer>
             <script src="./assets/js/functions.js"></script>
-            <!-- <script src="./assets/js/masonry-initializer.js"></script> -->
         </footer>
     </div>
 </body>
