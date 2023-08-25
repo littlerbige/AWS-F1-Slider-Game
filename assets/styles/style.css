@@ -138,10 +138,14 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+button:hover,
+button:disabled {
     background-color: var(--dark-blue);
     color: var(--accent);
     border: 1px solid var(--accent);
+}
+button:disabled {
+    pointer-events: none;
 }
 
 /** Range Input Styling **/
@@ -208,6 +212,19 @@ input[type=range]::-moz-range-track {
     height: 0.3rem;
     border-radius: 20px;
     background-color: var(--accent);
+}
+/*Disabled Input*/
+input:disabled {
+    pointer-events: none;
+}
+
+/*Disabled coloring*/
+input[type=range]:disabled::-webkit-slider-runnable-track {
+    background-color: var(--grey);
+}
+
+input[type=range]:disabled::-moz-range-track {
+    background-color: var(--grey);
 }
 
 /**
@@ -373,7 +390,8 @@ body {
 }
 .input-container {
     display: grid;
-    grid-template-columns: 0.5fr 1fr;
+    grid-template-columns: 0.5fr 1fr 0.2fr;
+    column-gap: 1rem;
 }
 .input-inner-wrapper {
     width: 100%;
@@ -393,8 +411,8 @@ body {
     border-radius: 4px;
     background: var(--accent);
     color: white;
-  }
-  .bubble::after {
+}
+.bubble::after {
     content: "";
     position: absolute;
     top: -1px;
@@ -402,7 +420,12 @@ body {
     width: 2px;
     height: 2px;
     background: var(--accent);
-  }
+}
+
+.lap-time-reduction {
+    font-size: var(--normal-font-size);
+    color: var(--accent-2);
+}
 
 /**
 * Results and Progress Bar Styling
