@@ -60,14 +60,52 @@ h3 {
 * Colors
 **/
 
-:root {
+:root.original {
     --dark: #0E0E11;
-    --blue: #1A2B3C;
-    --dark-blue: #0C1829;
     --light: #FFFFFF;
     --grey: #37373A;
+    --base: #0C1829;
+    --base-2: #1A2B3C;
     --accent: #F6AF00;
     --accent-2:  #46B929;
+    --gradient-background-color:hsla(215,54%,10%,1);
+    --gradient-background-image:
+    radial-gradient(at 27% 42%, hsla(215,100%,10%,1) 0px, transparent 50%),
+    radial-gradient(at 73% 67%, hsla(210,100%,16%,1) 0px, transparent 50%),
+    radial-gradient(at 86% 80%, hsla(42,100%,48%,1) 0px, transparent 50%),
+    radial-gradient(at 17% 53%, hsla(107,100%,44%,1) 0px, transparent 50%);
+}
+
+:root.cs3 {
+    --dark: #232F3E;
+    --light: #FFFFFF;
+    --grey: #37373A;
+    --base: #005276;
+    --base-2: #007faa;
+    --accent: #9ffcea;
+    --accent-2:  #38ef7d;
+    --gradient-background-color:hsla(198,100%,23%,1);
+    --gradient-background-image:
+    radial-gradient(at 9% 13%, hsla(198,100%,23%,1) 0px, transparent 50%),
+    radial-gradient(at 40% 42%, hsla(195,100%,33%,1) 0px, transparent 50%),
+    radial-gradient(at 56% 52%, hsla(142,85%,57%,1) 0px, transparent 50%),
+    radial-gradient(at 96% 88%, hsla(168,93%,80%,1) 0px, transparent 50%);
+}
+
+:root.cs4 {
+    --dark: #232F3E;
+    --light: #FFFFFF;
+    --grey: #37373A;
+    --base: #003181;
+    --base-2: #2074D5;
+    --accent: #FFAD97;
+    --accent-2:  #f46EBB;
+    --gradient-background-color:hsla(217,100%,25%,1);
+    --gradient-background-image:
+    radial-gradient(at 9% 13%, hsla(217,100%,25%,1) 0px, transparent 50%),
+    radial-gradient(at 40% 42%, hsla(212,73%,48%,1) 0px, transparent 50%),
+    radial-gradient(at 56% 52%, hsla(325,85%,69%,1) 0px, transparent 50%),
+    radial-gradient(at 96% 88%, hsla(12,100%,79%,1) 0px, transparent 50%);
 }
 
 /**
@@ -179,7 +217,7 @@ button {
 
 button:hover,
 button:disabled {
-    background-color: var(--dark-blue);
+    background-color: var(--base);
     color: var(--accent);
     border: 1px solid var(--accent);
 }
@@ -266,19 +304,39 @@ input[type=range]:disabled::-moz-range-track {
     background-color: var(--grey);
 }
 
+/*Select Styling*/
+
+
 /**
 * General
 **/
 
 body {
     color: var(--light);
-    background-color: var(--dark-blue);
+    /* background-color: var(--base); */
+    background-color: var(--gradient-background-color);
+    background-image: var(--gradient-background-image);
     font-family: 'Amazon Ember Display Regular'
 }
 
 #site-wrapper {
     max-width: 2000px;
     margin: 0 auto;
+}
+
+/**
+* Color Scheme Select
+**/
+
+.color-switcher-wrapper {
+    text-align: center;
+    padding: 0.2em 0;
+}
+
+#color-switcher {
+    border: none;
+    color: var(--light);
+    background-color: var(--dark);
 }
 
 /**
@@ -308,7 +366,7 @@ body {
 .tile {
     padding: 5px;
     border-radius: 10px;
-    background-color: var(--blue);
+    background-color: var(--base-2);
 }
 
 .tile-title {
@@ -317,7 +375,7 @@ body {
     text-align: center;
     font-size: var(--large-font-size);
     color: var(--light);
-    background-color: var(--dark-blue);
+    background-color: var(--base);
     border-radius: 10px;
 }
 
@@ -484,7 +542,7 @@ body {
     justify-content: center;
     border-radius: 10px;
     border: 1px solid var(--dark);
-    background-color: var(--blue);
+    background-color: var(--base-2);
 }
 
 /* Button Container Styling */
@@ -545,7 +603,7 @@ body {
     width: 100%;
     height: 20px;
     border-radius: 20px;
-    background-color: var(--dark-blue);
+    background-color: var(--base);
 }
 
 .progress-bar {
