@@ -206,3 +206,7 @@ function getBubbleLapTimeValue(range_name, val) {
       return ((val/100)*0.5).toFixed(2);
   }
 }
+
+document.getElementById("color-switcher").onchange = function(){
+  document.documentElement.className = this.value;
+}
