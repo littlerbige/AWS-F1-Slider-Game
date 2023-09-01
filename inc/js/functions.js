@@ -52,22 +52,39 @@ range_sliders.forEach(container => {
 });
 
 document.getElementById("run-simulation-btn").onclick = function(){
-  this.disabled = true;
-  range_sliders.forEach(slider => {
-    slider.querySelector(".rev-slider").disabled = true;
-  });
-  const lap_time_reductions = document.querySelectorAll(".lap-time-reduction");
-  let total_reduction = 0;
-  let total_reduction_rounded = 0;
-   
-  lap_time_reductions.forEach((reduction, i) => {
-    setTimeout(function(){
-      total_reduction_rounded += Number(reduction.innerHTML);
-      total_reduction += Number(reduction.innerHTML);
-      document.getElementById('total-reduction').innerHTML = total_reduction_rounded.toFixed(2) + "s";
-    }, i * 100);
-  });
-  document.getElementById('total-reduction').innerHTML = total_reduction;
+  if(!this.classList.contains('reset-game')){
+    this.classList.toggle('reset-game');
+    this.innerHTML="Reset Game";
+    range_sliders.forEach(slider => {
+      slider.querySelector(".rev-slider").disabled = true;
+    });
+    const lap_time_reductions = document.querySelectorAll(".lap-time-reduction");
+    let total_reduction = 0;
+    let total_reduction_rounded = 0;
+     
+    lap_time_reductions.forEach((reduction, i) => {
+      setTimeout(function(){
+        total_reduction_rounded += Number(reduction.innerHTML);
+        total_reduction += Number(reduction.innerHTML);
+        document.getElementById('total-reduction').innerHTML = total_reduction_rounded.toFixed(2) + "s";
+      }, i * 100);
+    });
+    document.getElementById('total-reduction').innerHTML = total_reduction;
+  } else {
+    this.classList.toggle('reset-game');
+    this.innerHTML="Run Simulation";
+    range_sliders.forEach(slider => {
+      const range = slider.querySelector(".rev-slider");
+      const bubble = slider.querySelector(".bubble");
+      range.disabled = false;
+      range.value = 0;
+      setRangeOutput(range, bubble);
+      progress_bar.style.width = "100%";
+      document.getElementById("remaining-budget").innerHTML = budget.toLocaleString("en-US", usd_format);
+      document.getElementById('total-reduction').innerHTML = "0.00s";
+    });
+  }
+  
 };
 
 //Set's Range Output
