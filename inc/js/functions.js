@@ -131,10 +131,6 @@ function getDollarValue(range_name, val) {
       return Math.floor((val**2.95));
     case "suspension-slider":
       return Math.floor((val**3.3));
-    case "suspension-slider2":
-      return Math.floor((val**3.3));
-    case "suspension-slider3":
-      return Math.floor((val**3.3));
     case "engine-reliability-slider":
       return Math.floor((val**2.98));
     case "turbo-reliability-slider":
@@ -149,6 +145,8 @@ function getDollarValue(range_name, val) {
       return Math.floor((val**3.1));
     case "software-upgrade-slider":
       return Math.floor((val**2.95));
+    case "hardware-slider":
+      return Math.floor((val**2.85));
   }
 }
 
@@ -167,10 +165,6 @@ function getRangeValue(range_name, val) {
       return Math.floor((val**(1/2.95)));
     case "suspension-slider":
       return Math.floor((val**(1/3.3)));
-    case "suspension-slider2":
-      return Math.floor((val**(1/3.3)));
-    case "suspension-slider3":
-      return Math.floor((val**(1/3.3)));
     case "engine-reliability-slider":
       return Math.floor((val**(1/2.98)));
     case "turbo-reliability-slider":
@@ -185,6 +179,8 @@ function getRangeValue(range_name, val) {
       return Math.floor((val**(1/3.1)));
     case "software-upgrade-slider":
       return Math.floor((val**(1/2.95)));
+    case "hardware-slider":
+      return Math.floor((val**(1/2.85)));
   }
 }
 
@@ -203,10 +199,6 @@ function getBubbleLapTimeValue(range_name, val) {
       return ((val/100)*0.8).toFixed(2);
     case "suspension-slider":
       return ((val/100)*0.5).toFixed(2);
-    case "suspension-slider2":
-      return ((val/100)*0.5).toFixed(2);
-    case "suspension-slider3":
-      return ((val/100)*0.5).toFixed(2);
     case "engine-reliability-slider":
       return ((val/100)*0.2).toFixed(2);
     case "turbo-reliability-slider":
@@ -221,6 +213,8 @@ function getBubbleLapTimeValue(range_name, val) {
       return ((val/100)*0.5).toFixed(2);
     case "software-upgrade-slider":
       return ((val/100)*0.5).toFixed(2);
+    case "hardware-slider":
+      return ((val/100)*0.2).toFixed(2);
   }
 }
 
