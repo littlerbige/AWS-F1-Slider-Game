@@ -507,7 +507,7 @@ body {
     padding: 4px 12px;
     border-radius: 4px;
     background: var(--accent);
-    color: white;
+    color: var(--dark);
 }
 .bubble::after {
     content: "";
@@ -562,7 +562,7 @@ body {
     padding: 1rem;
     border-radius: 5px;
     text-align: center;
-    color: var(--light);
+    color: var(--dark);
     background-color: var(--accent-2);
     display: flex;
     flex-flow: column nowrap;
