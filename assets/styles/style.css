@@ -382,6 +382,7 @@ body {
 /** Game Description Tile **/
 #game-description h1 {
     font-size: var(--xxlarge-font-size);
+    margin-top: 1em;
 }
 
 #game-description h2 {
@@ -389,7 +390,11 @@ body {
 }
 
 #game-description p {
-    font-size: var(--medium-font-size);
+    font-size: var(--normal-font-size);
+}
+
+#game-description img {
+    max-width: 70%;
 }
 
 /** Tile Media Queries **/
@@ -407,17 +412,17 @@ body {
 @media (min-width: 769px) and (max-width: 1024px) {
     .tile-grid {
         grid-template-columns: repeat(10, 1fr);
-        grid-template-rows: repeat(7, 1fr);
+        grid-template-rows: repeat(9, 1fr);
     }
     #game-description {
         grid-column: span 10;
-        grid-row: span 2;
+        grid-row: span 3;
         padding: 1rem;
     }
     
     #aerodynamics-tile {
         grid-column: span 5;
-        grid-row: span 3;
+        grid-row: 4 / span 3;
     }
     
     #vehicle-dynamics-tile {
@@ -427,27 +432,27 @@ body {
     
     #powertrain-tile {
         grid-column: 6 / span 5;
-        grid-row: 3 / span 3;
+        grid-row: 4 / span 3;
     }
     
     #weight-management-tile {
         grid-column: 6 / span 5;
-        grid-row: 6 / span 2;
+        grid-row: 7 / span 2;
     }
     #electronics-tile {
         grid-column: 1 / span 5;
-        grid-row: 6 / span 2;
+        grid-row: 7 / span 2;
     }
 }
 /* CSS in here for desktop only */
 @media (min-width: 1025px) {
 	.tile-grid {
         grid-template-columns: repeat(15, 1fr);
-        grid-template-rows: repeat(9, 1fr);
+        grid-template-rows: repeat(8, 1fr);
     }
     #game-description {
         grid-column: span 5;
-        grid-row: span 6;
+        grid-row: span 5;
         padding: 1rem;
     }
     
@@ -458,7 +463,7 @@ body {
 
     #electronics-tile {
         grid-column: 1 / span 5;
-        grid-row: 7 / span 3;
+        grid-row: 6 / span 3;
     }
     
     #powertrain-tile {
@@ -473,10 +478,6 @@ body {
     #vehicle-dynamics-tile {
         grid-column: 6 / span 5;
         grid-row: span 2;
-    }
-
-    #game-description h1 {
-        word-spacing: 100vw;
     }
 }
 
@@ -556,6 +557,11 @@ body {
     height: 100%;
 }
 
+/** Run Simulation Button **/
+#run-simulation-btn {
+    font-size: var(--medium-font-size);
+}
+
 /** Lap Time Styling **/
 #lap-time-tile {
     flex: 2 1 13%;
@@ -615,7 +621,7 @@ body {
 }
 
 /** Results Section Media Queries **/
-@media (max-width: 1085px ) {
+@media (max-width: 1200px ) {
     .results-wrapper {
         height: 300px;
     }
