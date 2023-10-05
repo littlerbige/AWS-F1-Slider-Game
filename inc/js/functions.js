@@ -66,7 +66,7 @@ document.getElementById("run-simulation-btn").onclick = function(){
       setTimeout(function(){
         total_reduction_rounded += Number(reduction.innerHTML);
         total_reduction += Number(reduction.innerHTML);
-        document.getElementById('total-reduction').innerHTML = total_reduction_rounded.toFixed(2) + "s";
+        document.getElementById('total-reduction').innerHTML = total_reduction_rounded.toFixed(3) + "s";
       }, i * 100);
     });
     document.getElementById('total-reduction').innerHTML = total_reduction;
@@ -81,7 +81,7 @@ document.getElementById("run-simulation-btn").onclick = function(){
       setRangeOutput(range, bubble);
       progress_bar.style.width = "100%";
       document.getElementById("remaining-budget").innerHTML = budget.toLocaleString("en-US", usd_format);
-      document.getElementById('total-reduction').innerHTML = "0.00s";
+      document.getElementById('total-reduction').innerHTML = "0.000s";
     });
   }
   
